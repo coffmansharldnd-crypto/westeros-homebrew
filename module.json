@@ -1,0 +1,23 @@
+{
+  "id": "westeros-homebrew",
+  "title": "Westeros Homebrew Subclasses",
+  "description": "Automation for all five homebrew subclasses in the Westeros campaign.",
+  "version": "2.1.0",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13"
+  },
+  "esmodules": [
+    "scripts/main.mjs"
+  ],
+  "authors": [
+    {
+      "name": "Charl"
+    }
+  ],
+  "manifest": "https://raw.githubusercontent.com/coffmansharldnd-crypto/westeros-homebrew/main/module.json",
+  "download": "https://github.com/coffmansharldnd-crypto/westeros-homebrew/releases/download/v2.1.0/westeros-homebrew.zip",
+  "languages": [],
+  "styles": [],
+  "packs": []
+}
