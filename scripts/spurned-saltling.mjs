@@ -165,8 +165,8 @@ export class SpurnedSaltling {
           "The Beast's Brand",
           "icons/creatures/fish/fish-marlin-swordfish-background.webp",
           [
-            { key: "system.skills.per.bonuses.check", mode: CONST.ACTIVE_EFFECT_MODES.ADD, value: "-2", priority: 20 },
-            { key: "system.skills.dec.bonuses.check", mode: CONST.ACTIVE_EFFECT_MODES.ADD, value: "-2", priority: 20 }
+            { key: "system.skills.per.bonuses.check", mode: H.MODE.ADD, value: "-2", priority: 20 },
+            { key: "system.skills.dec.bonuses.check", mode: H.MODE.ADD, value: "-2", priority: 20 }
           ],
           {}, // No duration — permanent
           { [MODULE_ID]: { beastBrand: true, permanent: true } }
@@ -193,8 +193,8 @@ export class SpurnedSaltling {
           "The Saint's Halo",
           "icons/magic/light/explosion-star-glow-silhouette.webp",
           [
-            { key: "system.skills.per.bonuses.check", mode: CONST.ACTIVE_EFFECT_MODES.ADD, value: "2", priority: 20 },
-            { key: "system.skills.dec.bonuses.check", mode: CONST.ACTIVE_EFFECT_MODES.ADD, value: "2", priority: 20 }
+            { key: "system.skills.per.bonuses.check", mode: H.MODE.ADD, value: "2", priority: 20 },
+            { key: "system.skills.dec.bonuses.check", mode: H.MODE.ADD, value: "2", priority: 20 }
           ],
           {}, // No duration — permanent
           { [MODULE_ID]: { saintHalo: true, permanent: true } }
@@ -316,33 +316,33 @@ export class SpurnedSaltling {
     
     // -1 to -5: Unsettling Presence
     if (karma >= KARMA.TIER_UNSETTLING_MIN && karma <= KARMA.TIER_UNSETTLING_MAX) {
-      changes.push({ key: "system.skills.per.bonuses.check", mode: CONST.ACTIVE_EFFECT_MODES.ADD, value: "-1" });
-      changes.push({ key: "system.skills.dec.bonuses.check", mode: CONST.ACTIVE_EFFECT_MODES.ADD, value: "-1" });
+      changes.push({ key: "system.skills.per.bonuses.check", mode: H.MODE.ADD, value: "-1" });
+      changes.push({ key: "system.skills.dec.bonuses.check", mode: H.MODE.ADD, value: "-1" });
     }
     // -6 to -10: Creeping Monstrosity
     else if (karma >= KARMA.TIER_CREEPING_MIN && karma <= KARMA.TIER_CREEPING_MAX) {
-      changes.push({ key: "system.skills.per.bonuses.check", mode: CONST.ACTIVE_EFFECT_MODES.ADD, value: "-2" });
-      changes.push({ key: "system.skills.dec.bonuses.check", mode: CONST.ACTIVE_EFFECT_MODES.ADD, value: "-2" });
-      changes.push({ key: "system.skills.itm.bonuses.check", mode: CONST.ACTIVE_EFFECT_MODES.ADD, value: "1" });
-      changes.push({ key: "system.skills.sur.bonuses.check", mode: CONST.ACTIVE_EFFECT_MODES.ADD, value: "1" });
+      changes.push({ key: "system.skills.per.bonuses.check", mode: H.MODE.ADD, value: "-2" });
+      changes.push({ key: "system.skills.dec.bonuses.check", mode: H.MODE.ADD, value: "-2" });
+      changes.push({ key: "system.skills.itm.bonuses.check", mode: H.MODE.ADD, value: "1" });
+      changes.push({ key: "system.skills.sur.bonuses.check", mode: H.MODE.ADD, value: "1" });
     }
     // -11 to -15: Fading Humanity (Beast's Brand applied separately at -15)
     else if (karma >= KARMA.TIER_FADING_MIN && karma <= KARMA.TIER_FADING_MAX) {
       // Note: -2 CHA handled by Beast's Brand permanent effect at -15
       // Additional effects for this tier:
-      changes.push({ key: "system.skills.itm.bonuses.check", mode: CONST.ACTIVE_EFFECT_MODES.ADD, value: "2" });
+      changes.push({ key: "system.skills.itm.bonuses.check", mode: H.MODE.ADD, value: "2" });
       // Advantage on Animal Handling would need special handling
     }
     // -16 to -20: Ascension of the Beast
     else if (karma >= KARMA.TIER_BEAST_ASCENDS_MIN && karma <= KARMA.TIER_BEAST_ASCENDS_MAX) {
-      changes.push({ key: "system.skills.itm.bonuses.check", mode: CONST.ACTIVE_EFFECT_MODES.ADD, value: "3" });
-      changes.push({ key: "system.abilities.int.bonuses.check", mode: CONST.ACTIVE_EFFECT_MODES.ADD, value: "-1" });
+      changes.push({ key: "system.skills.itm.bonuses.check", mode: H.MODE.ADD, value: "3" });
+      changes.push({ key: "system.abilities.int.bonuses.check", mode: H.MODE.ADD, value: "-1" });
       // Beast communication, perception advantage would need special handling
     }
     // -21 to -25: Drowned in the Drowned One's Embrace
     else if (karma >= KARMA.TIER_DROWNED_MIN && karma <= KARMA.TIER_DROWNED_MAX) {
-      changes.push({ key: "system.skills.itm.bonuses.check", mode: CONST.ACTIVE_EFFECT_MODES.ADD, value: "4" });
-      changes.push({ key: "system.abilities.int.bonuses.check", mode: CONST.ACTIVE_EFFECT_MODES.ADD, value: "-2" });
+      changes.push({ key: "system.skills.itm.bonuses.check", mode: H.MODE.ADD, value: "4" });
+      changes.push({ key: "system.abilities.int.bonuses.check", mode: H.MODE.ADD, value: "-2" });
       // No sleep needed, beast neutrality would need special handling
     }
     
@@ -352,31 +352,31 @@ export class SpurnedSaltling {
     
     // +1 to +5: Glimmer of Nobility
     else if (karma >= KARMA.TIER_GLIMMER_MIN && karma <= KARMA.TIER_GLIMMER_MAX) {
-      changes.push({ key: "system.skills.per.bonuses.check", mode: CONST.ACTIVE_EFFECT_MODES.ADD, value: "1" });
+      changes.push({ key: "system.skills.per.bonuses.check", mode: H.MODE.ADD, value: "1" });
     }
     // +6 to +10: Against Expectation
     else if (karma >= KARMA.TIER_AGAINST_MIN && karma <= KARMA.TIER_AGAINST_MAX) {
-      changes.push({ key: "system.skills.per.bonuses.check", mode: CONST.ACTIVE_EFFECT_MODES.ADD, value: "2" });
-      changes.push({ key: "system.skills.ins.bonuses.check", mode: CONST.ACTIVE_EFFECT_MODES.ADD, value: "2" });
+      changes.push({ key: "system.skills.per.bonuses.check", mode: H.MODE.ADD, value: "2" });
+      changes.push({ key: "system.skills.ins.bonuses.check", mode: H.MODE.ADD, value: "2" });
     }
     // +11 to +15: Defiant Paragon (Saint's Halo applied separately at +15)
     else if (karma >= KARMA.TIER_DEFIANT_MIN && karma <= KARMA.TIER_DEFIANT_MAX) {
       // Note: +2 CHA handled by Saint's Halo permanent effect at +15
-      changes.push({ key: "system.skills.per.bonuses.check", mode: CONST.ACTIVE_EFFECT_MODES.ADD, value: "2" });
-      changes.push({ key: "system.skills.ins.bonuses.check", mode: CONST.ACTIVE_EFFECT_MODES.ADD, value: "2" });
+      changes.push({ key: "system.skills.per.bonuses.check", mode: H.MODE.ADD, value: "2" });
+      changes.push({ key: "system.skills.ins.bonuses.check", mode: H.MODE.ADD, value: "2" });
     }
     // +16 to +20: Heart of the Isles
     else if (karma >= KARMA.TIER_HEART_MIN && karma <= KARMA.TIER_HEART_MAX) {
-      changes.push({ key: "system.skills.per.bonuses.check", mode: CONST.ACTIVE_EFFECT_MODES.ADD, value: "3" });
-      changes.push({ key: "system.skills.ins.bonuses.check", mode: CONST.ACTIVE_EFFECT_MODES.ADD, value: "3" });
-      changes.push({ key: "system.skills.dec.bonuses.check", mode: CONST.ACTIVE_EFFECT_MODES.ADD, value: "3" });
+      changes.push({ key: "system.skills.per.bonuses.check", mode: H.MODE.ADD, value: "3" });
+      changes.push({ key: "system.skills.ins.bonuses.check", mode: H.MODE.ADD, value: "3" });
+      changes.push({ key: "system.skills.dec.bonuses.check", mode: H.MODE.ADD, value: "3" });
     }
     // +21 to +25: Legend of Two Worlds
     else if (karma >= KARMA.TIER_LEGEND_MIN && karma <= KARMA.TIER_LEGEND_MAX) {
-      changes.push({ key: "system.skills.per.bonuses.check", mode: CONST.ACTIVE_EFFECT_MODES.ADD, value: "4" });
-      changes.push({ key: "system.skills.ins.bonuses.check", mode: CONST.ACTIVE_EFFECT_MODES.ADD, value: "4" });
-      changes.push({ key: "system.skills.dec.bonuses.check", mode: CONST.ACTIVE_EFFECT_MODES.ADD, value: "4" });
-      changes.push({ key: "system.skills.itm.bonuses.check", mode: CONST.ACTIVE_EFFECT_MODES.ADD, value: "4" });
+      changes.push({ key: "system.skills.per.bonuses.check", mode: H.MODE.ADD, value: "4" });
+      changes.push({ key: "system.skills.ins.bonuses.check", mode: H.MODE.ADD, value: "4" });
+      changes.push({ key: "system.skills.dec.bonuses.check", mode: H.MODE.ADD, value: "4" });
+      changes.push({ key: "system.skills.itm.bonuses.check", mode: H.MODE.ADD, value: "4" });
     }
 
     return H.createEffectData(
@@ -513,7 +513,7 @@ export class SpurnedSaltling {
       "Salt Scourge — Slowed",
       "icons/magic/water/wave-water-blue.webp",
       [
-        { key: "system.attributes.movement.walk", mode: CONST.ACTIVE_EFFECT_MODES.ADD, value: "-10", priority: 20 }
+        { key: "system.attributes.movement.walk", mode: H.MODE.ADD, value: "-10", priority: 20 }
       ],
       { rounds: 1 },
       { dae: { specialDuration: ["turnStartSource"] } }
@@ -608,10 +608,16 @@ export class SpurnedSaltling {
     const target = H.getFirstTarget();
     if (!target) return false;
 
-    // Contested Athletics
-    const actorRoll = await actor.rollSkill("ath", { fastForward: true, chatMessage: true });
+    // Contested Athletics — dnd5e 4.1+ changed rollSkill's signature, so go
+    // through the helper rather than calling the actor method directly.
+    const actorRoll = await H.rollSkill(actor, "ath");
     const targetSkill = target.actor.system.skills.acr.total >= target.actor.system.skills.ath.total ? "acr" : "ath";
-    const targetRoll = await target.actor.rollSkill(targetSkill, { fastForward: true, chatMessage: true });
+    const targetRoll = await H.rollSkill(target.actor, targetSkill);
+
+    if (!actorRoll || !targetRoll) {
+      ui.notifications.warn("Contested check could not be rolled — resolve manually.");
+      return false;
+    }
 
     if (actorRoll.total >= targetRoll.total) {
       // Apply grappled
@@ -619,7 +625,7 @@ export class SpurnedSaltling {
         "Grappled (Constricting Grasp)",
         "icons/skills/melee/strike-chain-link-white.webp",
         [
-          { key: "system.attributes.movement.walk", mode: CONST.ACTIVE_EFFECT_MODES.OVERRIDE, value: "0" }
+          { key: "system.attributes.movement.walk", mode: H.MODE.OVERRIDE, value: "0" }
         ],
         {},
         { [MODULE_ID]: { grappledBy: actor.id, saltlingGrapple: true } }
@@ -682,8 +688,8 @@ export class SpurnedSaltling {
         "Poisoned (Barbed Maw)",
         "icons/skills/toxins/poison-bottle-corked-fire-green.webp",
         [
-          { key: "flags.midi-qol.disadvantage.attack.all", mode: CONST.ACTIVE_EFFECT_MODES.CUSTOM, value: "1" },
-          { key: "flags.midi-qol.disadvantage.ability.check.all", mode: CONST.ACTIVE_EFFECT_MODES.CUSTOM, value: "1" }
+          { key: "flags.midi-qol.disadvantage.attack.all", mode: H.MODE.CUSTOM, value: "1" },
+          { key: "flags.midi-qol.disadvantage.ability.check.all", mode: H.MODE.CUSTOM, value: "1" }
         ],
         { rounds: 1 },
         { dae: { specialDuration: ["turnEnd"] } }
@@ -819,31 +825,23 @@ export class SpurnedSaltling {
       `<option value="${t.id}">${t.actor.name}</option>`
     ).join("");
 
-    const selectedIds = await new Promise(resolve => {
-      new Dialog({
-        title: "Heart of the Storm",
-        content: `
-          <p>Choose up to 3 allies within 15 feet:</p>
-          <form>
-            <div class="form-group"><label>Ally 1:</label><select id="a1"><option value="">—</option>${allyOptions}</select></div>
-            <div class="form-group"><label>Ally 2:</label><select id="a2"><option value="">—</option>${allyOptions}</select></div>
-            <div class="form-group"><label>Ally 3:</label><select id="a3"><option value="">—</option>${allyOptions}</select></div>
-          </form>
-        `,
-        buttons: {
-          confirm: {
-            label: "Rally!",
-            callback: (html) => resolve([
-              html.find("#a1").val(),
-              html.find("#a2").val(),
-              html.find("#a3").val()
-            ].filter(id => id))
-          },
-          cancel: { label: "Cancel", callback: () => resolve([]) }
-        },
-        default: "confirm"
-      }).render(true);
-    });
+    // AppV1 Dialog passes a jQuery object to its callback; DialogV2 passes a
+    // native element. H.formDialog abstracts both and returns plain values.
+    const picked = await H.formDialog(
+      "Heart of the Storm",
+      `
+        <p>Choose up to 3 allies within 15 feet:</p>
+        <form>
+          <div class="form-group"><label>Ally 1:</label><select id="a1"><option value="">—</option>${allyOptions}</select></div>
+          <div class="form-group"><label>Ally 2:</label><select id="a2"><option value="">—</option>${allyOptions}</select></div>
+          <div class="form-group"><label>Ally 3:</label><select id="a3"><option value="">—</option>${allyOptions}</select></div>
+        </form>
+      `,
+      ["a1", "a2", "a3"],
+      "Rally!"
+    );
+
+    const selectedIds = picked ? ["a1", "a2", "a3"].map(k => picked[k]).filter(id => id) : [];
 
     if (!selectedIds.length) return;
 
@@ -867,7 +865,7 @@ export class SpurnedSaltling {
         "Heart of the Storm — Rallied",
         "icons/magic/lightning/bolt-strike-blue.webp",
         [
-          { key: "flags.midi-qol.advantage.attack.all", mode: CONST.ACTIVE_EFFECT_MODES.CUSTOM, value: "1" }
+          { key: "flags.midi-qol.advantage.attack.all", mode: H.MODE.CUSTOM, value: "1" }
         ],
         { rounds: 1 },
         { dae: { specialDuration: ["1Attack"] } }
@@ -911,8 +909,8 @@ export class SpurnedSaltling {
       "The Calm — Stillwater",
       "icons/magic/water/water-hand.webp",
       [
-        { key: "system.traits.ci.value", mode: CONST.ACTIVE_EFFECT_MODES.ADD, value: "frightened" },
-        { key: "system.traits.ci.value", mode: CONST.ACTIVE_EFFECT_MODES.ADD, value: "charmed" }
+        { key: "system.traits.ci.value", mode: H.MODE.ADD, value: "frightened" },
+        { key: "system.traits.ci.value", mode: H.MODE.ADD, value: "charmed" }
       ],
       { seconds: 60 },
       { [MODULE_ID]: { stillwaterCalm: true } }
@@ -951,7 +949,7 @@ export class SpurnedSaltling {
       "Patient Strike — Debuffed",
       "icons/skills/melee/strike-polearm-light-orange.webp",
       [
-        { key: "flags.midi-qol.disadvantage.attack.all", mode: CONST.ACTIVE_EFFECT_MODES.CUSTOM, value: "1" }
+        { key: "flags.midi-qol.disadvantage.attack.all", mode: H.MODE.CUSTOM, value: "1" }
       ],
       { rounds: 1 },
       { dae: { specialDuration: ["1Attack"] } }
@@ -1060,7 +1058,7 @@ export class SpurnedSaltling {
             "Frightened (Abyssal Terror)",
             "icons/magic/control/fear-fright-monster-grin-purple.webp",
             [
-              { key: "flags.midi-qol.disadvantage.attack.all", mode: CONST.ACTIVE_EFFECT_MODES.CUSTOM, value: "1" }
+              { key: "flags.midi-qol.disadvantage.attack.all", mode: H.MODE.CUSTOM, value: "1" }
             ],
             { rounds: 1 },
             { dae: { specialDuration: ["turnEnd"] } }
@@ -1130,9 +1128,9 @@ export class SpurnedSaltling {
       "The Iron Seat — Active",
       "icons/environment/people/king.webp",
       [
-        { key: "flags.midi-qol.advantage.ability.save.all", mode: CONST.ACTIVE_EFFECT_MODES.CUSTOM, value: "1" },
-        { key: "system.traits.ci.value", mode: CONST.ACTIVE_EFFECT_MODES.ADD, value: "frightened" },
-        { key: "system.traits.ci.value", mode: CONST.ACTIVE_EFFECT_MODES.ADD, value: "charmed" }
+        { key: "flags.midi-qol.advantage.ability.save.all", mode: H.MODE.CUSTOM, value: "1" },
+        { key: "system.traits.ci.value", mode: H.MODE.ADD, value: "frightened" },
+        { key: "system.traits.ci.value", mode: H.MODE.ADD, value: "charmed" }
       ],
       { seconds: 60 },
       { [MODULE_ID]: { ironSeat: true, conMod } }

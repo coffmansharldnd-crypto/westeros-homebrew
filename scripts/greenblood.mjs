@@ -298,7 +298,7 @@ export class Greenblood {
           [
             {
               key: "system.attributes.movement.walk",
-              mode: CONST.ACTIVE_EFFECT_MODES.MULTIPLY,
+              mode: H.MODE.MULTIPLY,
               value: "0.5",
               priority: 20
             }

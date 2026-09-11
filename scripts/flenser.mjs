@@ -117,7 +117,7 @@ export class Flenser {
           [
             {
               key: "flags.midi-qol.OverTime",
-              mode: CONST.ACTIVE_EFFECT_MODES.OVERRIDE,
+              mode: H.MODE.OVERRIDE,
               value: `turn=start,damageRoll=${dotDice},damageType=fire,label=Rendering Fire Burn`,
               priority: 20
             }
@@ -197,7 +197,7 @@ export class Flenser {
       [
         {
           key: "system.bonuses.mwak.damage",
-          mode: CONST.ACTIVE_EFFECT_MODES.ADD,
+          mode: H.MODE.ADD,
           value: "1d6[fire]",
           priority: 20
         }
@@ -258,7 +258,7 @@ export class Flenser {
               [
                 {
                   key: "macro.CE",
-                  mode: CONST.ACTIVE_EFFECT_MODES.CUSTOM,
+                  mode: H.MODE.CUSTOM,
                   value: "Blinded",
                   priority: 20
                 }
